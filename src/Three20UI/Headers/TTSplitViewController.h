@@ -16,34 +16,35 @@
 
 #import "Three20UINavigator/TTNavigatorRootContainer.h"
 
-@class TTNavigator;
-
-/**
- * A split view controller that implements the navigator root protocol.
- *
- * See the TTCatalog sample app for an example of this controller in action.
- */
-@interface TTSplitViewController : UISplitViewController <
-  UISplitViewControllerDelegate,
-  TTNavigatorRootContainer
-> {
-@private
-  TTNavigator* _leftNavigator;
-  TTNavigator* _rightNavigator;
-
-  UIBarButtonItem*      _splitViewButton;
-  UIPopoverController*  _popoverSplitController;
-}
-
-@property (nonatomic, readonly) TTNavigator*          leftNavigator;
-@property (nonatomic, readonly) TTNavigator*          rightNavigator;
-@property (nonatomic, retain)   UIBarButtonItem*      splitViewButton;
-@property (nonatomic, retain)   UIPopoverController*  popoverSplitController;
-
-
-/**
- * Show/hide the button as the right-side navigator's root navigation item's left button.
- */
-- (void)updateSplitViewButton;
-
-@end
+//@class TTNavigator;
+//
+///**
+// * A split view controller that implements the navigator root protocol.
+// *
+// * See the TTCatalog sample app for an example of this controller in action.
+// */
+//@interface TTSplitViewController : NSObject//UISplitViewController <
+////  UISplitViewControllerDelegate,
+////  TTNavigatorRootContainer
+////> 
+//{
+//@private
+//  TTNavigator* _leftNavigator;
+//  TTNavigator* _rightNavigator;
+//
+//  UIBarButtonItem*      _splitViewButton;
+//  UIPopoverController*  _popoverSplitController;
+//}
+//
+//@property (nonatomic, readonly) TTNavigator*          leftNavigator;
+//@property (nonatomic, readonly) TTNavigator*          rightNavigator;
+//@property (nonatomic, retain)   UIBarButtonItem*      splitViewButton;
+//@property (nonatomic, retain)   UIPopoverController*  popoverSplitController;
+//
+//
+///**
+// * Show/hide the button as the right-side navigator's root navigation item's left button.
+// */
+//- (void)updateSplitViewButton;
+//
+//@end

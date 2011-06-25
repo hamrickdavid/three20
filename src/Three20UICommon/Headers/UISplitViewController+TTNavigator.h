@@ -17,6 +17,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface UISplitViewController (TTNavigator)
-
-@end
+//@interface UISplitViewController (TTNavigator)
+//
+//@end
