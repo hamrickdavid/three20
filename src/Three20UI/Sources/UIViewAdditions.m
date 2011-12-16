@@ -105,17 +105,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initInView:(UIView *)view location:(CGPoint)location {
   if (self = [super init]) {
-    _tapCount = 1;
-    _locationInWindow = location;
-    _previousLocationInWindow = location;
 
-    UIView *target = [view.window hitTest:_locationInWindow withEvent:nil];
-    _view = [target retain];
-    _window = [view.window retain];
-    _phase = UITouchPhaseBegan;
-    _touchFlags._firstTouchForView = 1;
-    _touchFlags._isTap = 1;
-    _timestamp = [NSDate timeIntervalSinceReferenceDate];
   }
   return self;
 }
@@ -425,15 +415,7 @@ TT_FIX_CATEGORY_BUG(UIViewAdditions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)simulateTapAtPoint:(CGPoint)location {
-  UITouch *touch = [[[UITouch alloc] initInView:self location:location] autorelease];
 
-  UIEvent *eventDown = [[[UIEvent alloc] initWithTouch:touch] autorelease];
-  [touch.view touchesBegan:[NSSet setWithObject:touch] withEvent:eventDown];
-
-  [touch changeToPhase:UITouchPhaseEnded];
-
-  UIEvent *eventUp = [[[UIEvent alloc] initWithTouch:touch] autorelease];
-  [touch.view touchesEnded:[NSSet setWithObject:touch] withEvent:eventUp];
 }
 
 #endif
